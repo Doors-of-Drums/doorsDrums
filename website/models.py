@@ -2,9 +2,8 @@ from pyexpat import model
 from django.db import models
 
 # Create your models here.
-
-
 class Usuario(models.Model):
+
     # tabla de usuarios
     nombre = models.CharField(max_length=50)
     nombre_usuario = models.CharField(max_length=50)
@@ -18,10 +17,11 @@ class Usuario(models.Model):
     telefono = models.CharField(max_length=200)
     foto = models.CharField(max_length=100)
     status = models.BooleanField(default=False)
-    
+
     # función para impresión
     def __str__(self):
         return self.nombre_usuario
+
 
 class Cancion(models.Model):
     # tabla de canción
@@ -30,7 +30,7 @@ class Cancion(models.Model):
     genero_mus = models.CharField(max_length=100)
     ritmo = models.CharField(max_length=100)
     dificultad = models.CharField(max_length=100)
-    
+
     # función para impresión
     def __str__(self):
         return self.nombre
@@ -43,7 +43,7 @@ class Historial_partida(models.Model):
     puntos = models.PositiveIntegerField()  # desde 0 a 2147483647
     fecha = models.DateTimeField()
     tiempo_jugado = models.PositiveIntegerField()
-    
+
     # función para impresión
     def __str__(self):
         return self.puntos
